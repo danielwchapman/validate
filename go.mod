@@ -1,4 +1,4 @@
-module github.com/danielwchapan/validate
+module github.com/danielwchapman/validate
 
 go 1.20
 
