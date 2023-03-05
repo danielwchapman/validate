@@ -88,15 +88,16 @@ func Test_IsInt64(t *testing.T) {
 		test      string
 		name      string
 		value     string
+		bitSize   int
 		expectErr bool
 	}{
-		{"Valid", "value", "123", false},
-		{"Invalid", "value", "test", true},
+		{"Valid", "value", "123", 32, false},
+		{"Invalid", "value", "test", 64, true},
 	}
 
 	for _, tc := range testcases {
 		t.Run(tc.test, func(t *testing.T) {
-			err := IsInt64(tc.name, tc.value)()
+			err := IsInt(tc.name, tc.value, tc.bitSize)()
 			if tc.expectErr && err == nil {
 				t.Error("Expected error, got nil")
 			}

@@ -27,9 +27,9 @@ func Exists(name string, value interface{}) Rule {
 	}
 }
 
-func IsInt64(name string, value string) Rule {
+func IsInt(name string, value string, bitSize int) Rule {
 	return func() error {
-		if _, err := strconv.ParseInt(value, 10, 64); err != nil {
+		if _, err := strconv.ParseInt(value, 10, bitSize); err != nil {
 			return errors.New(name + " is not an integer")
 		}
 		return nil
