@@ -9,7 +9,7 @@ var (
     count = 3
 )
     
-err := validate.Run(
+err := errors.Join(
     validate.Exists("age", age),
     validate.Length("ids", ids, 2),
     validate.Between("count", count, 0, 5),
