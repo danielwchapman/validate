@@ -1,7 +1,13 @@
 # validate
 A simple, reusable parameter validator
 
-Usage
+## Install
+Install this package with `go get`:
+```
+go get github.com/danielwchapman/validate
+```
+
+## Usage
 ```
 var (
     age *int
